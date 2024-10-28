@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://ycynwff253v8"]
+
+[ext_resource type="PackedScene" uid="uid://essfoo8o6ptq" path="res://Bullet Hell Implimentation/scenes/player_fox.tscn" id="1_8ervx"]
+[ext_resource type="PackedScene" uid="uid://bunay7ry7s18i" path="res://Bullet Hell Implimentation/enemies/dollop_attack.tscn" id="3_0h5sf"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/scripts/Enemy.gd" id="3_52v3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_et4kl"]
+size = Vector2(382, 21)
+
+[node name="BulletHellImp" type="Node2D"]
+
+[node name="Player_fox" parent="." instance=ExtResource("1_8ervx")]
+position = Vector2(0, 91)
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("3_52v3g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -187.0
+offset_top = 19.0
+offset_right = 195.0
+offset_bottom = 153.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = -181.0
+offset_top = 24.0
+offset_right = 189.0
+offset_bottom = 147.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ColorRect/StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 370, 0, 370, 123, 0, 123, 0, 0, -37, -7, -47, 171, 381, 160, 386, -21, -35, -25, -36, -6)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 157.5)
+shape = SubResource("RectangleShape2D_et4kl")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="dollopAttack" parent="." instance=ExtResource("3_0h5sf")]
+position = Vector2(-124, -42)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgkbgt0mkcums"]
 
 [ext_resource type="Script" path="res://Menu/options_menu.gd" id="1_7keig"]
-[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Menu/gamecover.png" id="2_glika"]
+[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_glika"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

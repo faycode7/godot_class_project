@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://essfoo8o6ptq"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/scripts/Player_fox.gd" id="1_aqyhm"]
+[ext_resource type="Texture2D" uid="uid://n6maanfmuhn2" path="res://Art/Assets/fox.png" id="2_nnfcr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3rfs"]
+size = Vector2(26, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5egm4"]
+size = Vector2(18, 17.25)
+
+[node name="playerFoxGirl" type="CharacterBody2D"]
+position = Vector2(0, 1.5)
+script = ExtResource("1_aqyhm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1.5625, 1.59375)
+texture = ExtResource("2_nnfcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_l3rfs")
+
+[node name="Area2d" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2d"]
+position = Vector2(0, 3.125)
+shape = SubResource("RectangleShape2D_5egm4")
+debug_color = Color(0.956953, 1.2514e-06, 0.535177, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="area_entered" from="Area2d" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2d" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

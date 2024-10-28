@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ycynwff253v8"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/scripts/Player_fox.gd" id="1_bwlpx"]
+[ext_resource type="Texture2D" uid="uid://n6maanfmuhn2" path="res://Art/Assets/fox.png" id="2_ikfre"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/scripts/Enemy.gd" id="3_52v3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5egm4"]
+size = Vector2(10, 9)
+
+[node name="BulletHellImp" type="Node2D"]
+
+[node name="Player_fox" type="Area2D" parent="."]
+script = ExtResource("1_bwlpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_fox"]
+texture = ExtResource("2_ikfre")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_fox"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_5egm4")
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("3_52v3g")

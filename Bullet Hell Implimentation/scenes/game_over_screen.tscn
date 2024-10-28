@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3epty22sf3iw"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/scenes/game_over_screen.gd" id="1_kihql"]
+[ext_resource type="Texture2D" uid="uid://n6maanfmuhn2" path="res://Art/Assets/fox.png" id="2_2hxn3"]
+
+[node name="gameOverScreen" type="Node2D"]
+script = ExtResource("1_kihql")
+
+[node name="gameOverBackground" type="ColorRect" parent="."]
+offset_left = -312.0
+offset_top = -150.0
+offset_right = 371.0
+offset_bottom = 204.0
+color = Color(0, 0, 0, 1)
+
+[node name="gameOverText" type="RichTextLabel" parent="."]
+offset_left = -104.0
+offset_top = -83.0
+offset_right = 109.0
+offset_bottom = -23.0
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[shake rate=5 level=10]you are dead[/shake]"
+
+[node name="tryAgain" type="RichTextLabel" parent="."]
+offset_left = -114.0
+offset_right = 99.0
+offset_bottom = 60.0
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[shake rate=5 level=10]try again[/shake]"
+
+[node name="giveUp" type="RichTextLabel" parent="."]
+offset_left = -114.0
+offset_top = 60.0
+offset_right = 99.0
+offset_bottom = 120.0
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[shake rate=5 level=10]give up[/shake]"
+
+[node name="Control" type="Sprite2D" parent="."]
+position = Vector2(-131, 26)
+scale = Vector2(1.625, 1.5625)
+texture = ExtResource("2_2hxn3")

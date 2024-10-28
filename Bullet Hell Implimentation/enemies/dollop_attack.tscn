@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bunay7ry7s18i"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/dollop_attack.gd" id="1_cfab3"]
+[ext_resource type="Texture2D" uid="uid://48ikau4nkbge" path="res://Art/Assets/drop.png" id="2_ueknm"]
+
+[node name="dollopAttack" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_cfab3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ueknm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 52, -36, 30, -36, -11, 7, -54, 30, -52, 29, -40, 19, -33, 18, -28, 35, 11, 25, 43)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 58)
+collision_mask = 4
