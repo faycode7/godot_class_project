@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1hkk746p3asr"]
+
+[ext_resource type="PackedScene" uid="uid://c4q4s11rqubnj" path="res://player/fox_girl.tscn" id="1_ehbgr"]
+
+[node name="1st scene" type="Node2D"]
+
+[node name="fox_girl" parent="." instance=ExtResource("1_ehbgr")]
+position = Vector2(146, 86)
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://1thaqtg7b51v"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_knuly"]
-[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_547ns"]
+[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_i8yji"]
 [ext_resource type="FontFile" uid="uid://b6opit5w86lpd" path="res://Fonts/odaria-font/Odaria-AR0wL.otf" id="2_y3t5f"]
 [ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="3_llw7x"]
 
@@ -43,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_547ns")
+texture = ExtResource("2_i8yji")
 stretch_mode = 6
 
 [node name="Title" type="Label" parent="."]
