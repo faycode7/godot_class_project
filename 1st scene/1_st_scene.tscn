@@ -1,41 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1hkk746p3asr"]
+[gd_scene load_steps=12 format=3 uid="uid://b1hkk746p3asr"]
 
 [ext_resource type="PackedScene" uid="uid://c4q4s11rqubnj" path="res://player/fox_girl.tscn" id="1_ehbgr"]
 [ext_resource type="Texture2D" uid="uid://ds4cyw3vlbo44" path="res://Art/Backgrounds/house_ex.png" id="1_ypqej"]
+[ext_resource type="Texture2D" uid="uid://bfk2tc364frhv" path="res://Art/Assets/paper.png" id="3_ke6dc"]
 [ext_resource type="Texture2D" uid="uid://dg70pbt62gb1q" path="res://Art/Assets/notebook.png" id="3_lsoag"]
+[ext_resource type="Texture2D" uid="uid://b5an3xcmwhjio" path="res://Art/Assets/radio.png" id="5_40aew"]
+[ext_resource type="Texture2D" uid="uid://dkvq2gv2bcir8" path="res://Art/Assets/sweater.png" id="6_rq04e"]
+[ext_resource type="Texture2D" uid="uid://uy1of3n2nhqd" path="res://Art/Assets/corpse.png" id="7_3qevw"]
+
+[sub_resource type="GDScript" id="GDScript_kr5al"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nj0mn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg1re"]
-size = Vector2(132, 80)
+size = Vector2(132, 46)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsv3n"]
-size = Vector2(11, 7.5)
-
-[sub_resource type="GDScript" id="GDScript_kr5al"]
+size = Vector2(18.5, 16)
 
 [node name="1st scene" type="Node2D"]
-
-[node name="House" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_nj0mn")
-
-[node name="Sprite2D" type="Sprite2D" parent="House"]
-position = Vector2(203, 300)
-texture = ExtResource("1_ypqej")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Sprite2D"]
-position = Vector2(-8, 28)
-shape = SubResource("RectangleShape2D_mg1re")
-
-[node name="Book" type="StaticBody2D" parent="."]
-
-[node name="Notebook" type="Sprite2D" parent="Book"]
-position = Vector2(396, 360)
-texture = ExtResource("3_lsoag")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book/Notebook"]
-position = Vector2(-0.5, 0.75)
-shape = SubResource("RectangleShape2D_lsv3n")
 
 [node name="fox_girl" parent="." instance=ExtResource("1_ehbgr")]
 position = Vector2(290, 326)
@@ -43,5 +26,77 @@ position = Vector2(290, 326)
 [node name="Camera2D2" type="Camera2D" parent="fox_girl"]
 position = Vector2(-130, -30)
 scale = Vector2(1.0964, 0.651622)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 script = SubResource("GDScript_kr5al")
+
+[node name="House" type="StaticBody2D" parent="."]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_nj0mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="House"]
+position = Vector2(203, 300)
+texture = ExtResource("1_ypqej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
+position = Vector2(195, 345)
+shape = SubResource("RectangleShape2D_mg1re")
+
+[node name="Paper" type="StaticBody2D" parent="."]
+position = Vector2(144, -28)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Paper"]
+position = Vector2(270.5, 388)
+texture = ExtResource("3_ke6dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paper"]
+position = Vector2(271.5, 388)
+shape = SubResource("RectangleShape2D_lsv3n")
+
+[node name="Book" type="StaticBody2D" parent="."]
+position = Vector2(295, 53)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Book"]
+position = Vector2(295, 356)
+texture = ExtResource("3_lsoag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
+position = Vector2(294.5, 356.75)
+shape = SubResource("RectangleShape2D_lsv3n")
+
+[node name="Radio" type="StaticBody2D" parent="."]
+position = Vector2(650, -39)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Radio"]
+position = Vector2(151, 358)
+texture = ExtResource("5_40aew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
+position = Vector2(152, 359)
+shape = SubResource("RectangleShape2D_lsv3n")
+
+[node name="Sweater" type="StaticBody2D" parent="."]
+position = Vector2(762, 169)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Sweater"]
+position = Vector2(198, 301.5)
+texture = ExtResource("6_rq04e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sweater"]
+position = Vector2(197.5, 299.5)
+shape = SubResource("RectangleShape2D_lsv3n")
+
+[node name="Corpse" type="StaticBody2D" parent="."]
+position = Vector2(1378.5, 92)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Corpse"]
+position = Vector2(-184, 265.5)
+texture = ExtResource("7_3qevw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corpse"]
+position = Vector2(-184.25, 265.5)
+shape = SubResource("RectangleShape2D_lsv3n")
