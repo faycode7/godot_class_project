@@ -129,11 +129,13 @@ _data = {
 size = Vector2(16, 21)
 
 [node name="fox_girl" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_3qb43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2.5808)
+y_sort_enabled = true
+position = Vector2(0, -11)
 texture = ExtResource("2_krmwm")
 hframes = 4
 vframes = 3
@@ -145,7 +147,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -10.4192)
 shape = SubResource("RectangleShape2D_j21rg")
 
 [node name="Camera2D" type="Camera2D" parent="."]

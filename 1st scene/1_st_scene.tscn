@@ -13,14 +13,16 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nj0mn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg1re"]
-size = Vector2(132, 46)
+size = Vector2(132, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsv3n"]
 size = Vector2(18.5, 16)
 
 [node name="1st scene" type="Node2D"]
+y_sort_enabled = true
 
 [node name="fox_girl" parent="." instance=ExtResource("1_ehbgr")]
+z_index = 1
 position = Vector2(290, 326)
 
 [node name="Camera2D2" type="Camera2D" parent="fox_girl"]
@@ -30,26 +32,33 @@ zoom = Vector2(3, 3)
 script = SubResource("GDScript_kr5al")
 
 [node name="House" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(168, 297)
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_nj0mn")
 
-[node name="Sprite2D" type="Sprite2D" parent="House"]
-position = Vector2(203, 300)
-texture = ExtResource("1_ypqej")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
-position = Vector2(195, 345)
+z_index = 2
+position = Vector2(-8, -11)
 shape = SubResource("RectangleShape2D_mg1re")
+
+[node name="Sprite2D" type="Sprite2D" parent="House"]
+z_index = 1
+y_sort_enabled = true
+texture = ExtResource("1_ypqej")
+offset = Vector2(0, -50)
 
 [node name="Paper" type="StaticBody2D" parent="."]
 position = Vector2(144, -28)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Paper"]
+y_sort_enabled = true
 position = Vector2(270.5, 388)
 texture = ExtResource("3_ke6dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paper"]
+y_sort_enabled = true
 position = Vector2(271.5, 388)
 shape = SubResource("RectangleShape2D_lsv3n")
 
@@ -58,10 +67,12 @@ position = Vector2(295, 53)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Book"]
+y_sort_enabled = true
 position = Vector2(295, 356)
 texture = ExtResource("3_lsoag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
+y_sort_enabled = true
 position = Vector2(294.5, 356.75)
 shape = SubResource("RectangleShape2D_lsv3n")
 
@@ -70,22 +81,27 @@ position = Vector2(650, -39)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Radio"]
+y_sort_enabled = true
 position = Vector2(151, 358)
 texture = ExtResource("5_40aew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
+y_sort_enabled = true
 position = Vector2(152, 359)
 shape = SubResource("RectangleShape2D_lsv3n")
 
 [node name="Sweater" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 position = Vector2(762, 169)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Sweater"]
+y_sort_enabled = true
 position = Vector2(198, 301.5)
 texture = ExtResource("6_rq04e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sweater"]
+y_sort_enabled = true
 position = Vector2(197.5, 299.5)
 shape = SubResource("RectangleShape2D_lsv3n")
 
@@ -94,9 +110,11 @@ position = Vector2(1378.5, 92)
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Corpse"]
+y_sort_enabled = true
 position = Vector2(-184, 265.5)
 texture = ExtResource("7_3qevw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corpse"]
+y_sort_enabled = true
 position = Vector2(-184.25, 265.5)
 shape = SubResource("RectangleShape2D_lsv3n")
