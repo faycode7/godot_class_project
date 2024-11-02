@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyyf8dciaaxh2"]
+[gd_scene load_steps=3 format=3 uid="uid://cyyf8dciaaxh2"]
 
 [ext_resource type="Script" path="res://Bullet Hell Implimentation/bossies/enemy_state_machine.gd" id="1_qjt7s"]
+[ext_resource type="PackedScene" uid="uid://b35c6m2b8hmaa" path="res://enemy_attack_patterns/test_enemy_pattern.tscn" id="2_x3vii"]
 
 [node name="enemy_state_machine" type="Node2D"]
 script = ExtResource("1_qjt7s")
@@ -8,3 +9,9 @@ script = ExtResource("1_qjt7s")
 [node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="Node" type="Node" parent="."]
+
+[node name="testEnemyPattern" parent="Node" instance=ExtResource("2_x3vii")]
+
+[node name="attacks" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

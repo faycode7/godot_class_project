@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b35c6m2b8hmaa"]
+
+[ext_resource type="Script" path="res://enemy_attack_patterns/test_enemy_pattern.gd" id="1_pa6ir"]
+
+[node name="testEnemyPattern" type="Node"]
+script = ExtResource("1_pa6ir")
