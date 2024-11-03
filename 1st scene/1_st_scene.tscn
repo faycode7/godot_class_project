@@ -1,25 +1,51 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1hkk746p3asr"]
+[gd_scene load_steps=17 format=3 uid="uid://b1hkk746p3asr"]
 
 [ext_resource type="PackedScene" uid="uid://c4q4s11rqubnj" path="res://player/fox_girl.tscn" id="1_ehbgr"]
 [ext_resource type="Texture2D" uid="uid://ds4cyw3vlbo44" path="res://Art/Backgrounds/house_ex.png" id="1_ypqej"]
+[ext_resource type="Script" path="res://1st scene/house_2d.gd" id="2_gy3ak"]
 [ext_resource type="Texture2D" uid="uid://bfk2tc364frhv" path="res://Art/Assets/paper.png" id="3_ke6dc"]
 [ext_resource type="Texture2D" uid="uid://dg70pbt62gb1q" path="res://Art/Assets/notebook.png" id="3_lsoag"]
-[ext_resource type="Texture2D" uid="uid://b5an3xcmwhjio" path="res://Art/Assets/radio.png" id="5_40aew"]
 [ext_resource type="Texture2D" uid="uid://dkvq2gv2bcir8" path="res://Art/Assets/sweater.png" id="6_rq04e"]
 [ext_resource type="Texture2D" uid="uid://uy1of3n2nhqd" path="res://Art/Assets/corpse.png" id="7_3qevw"]
+
+[sub_resource type="GDScript" id="GDScript_shmko"]
 
 [sub_resource type="GDScript" id="GDScript_kr5al"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nj0mn"]
 
+[sub_resource type="GDScript" id="GDScript_2efam"]
+script/source = "extends StaticBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg1re"]
 size = Vector2(132, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol1dw"]
+size = Vector2(170, 121)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsv3n"]
-size = Vector2(18.5, 16)
+size = Vector2(9, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wonxj"]
+size = Vector2(173, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc1iw"]
+size = Vector2(132, 26)
 
 [node name="1st scene" type="Node2D"]
 y_sort_enabled = true
+script = SubResource("GDScript_shmko")
 
 [node name="fox_girl" parent="." instance=ExtResource("1_ehbgr")]
 z_index = 1
@@ -32,15 +58,24 @@ zoom = Vector2(3, 3)
 script = SubResource("GDScript_kr5al")
 
 [node name="House" type="StaticBody2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(168, 297)
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_nj0mn")
+script = SubResource("GDScript_2efam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
 z_index = 2
 position = Vector2(-8, -11)
 shape = SubResource("RectangleShape2D_mg1re")
+
+[node name="House2D" type="Area2D" parent="House"]
+script = ExtResource("2_gy3ak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/House2D"]
+position = Vector2(-6, -22.5)
+shape = SubResource("RectangleShape2D_ol1dw")
 
 [node name="Sprite2D" type="Sprite2D" parent="House"]
 z_index = 1
@@ -49,6 +84,7 @@ texture = ExtResource("1_ypqej")
 offset = Vector2(0, -50)
 
 [node name="Paper" type="StaticBody2D" parent="."]
+y_sort_enabled = true
 position = Vector2(144, -28)
 collision_mask = 2
 
@@ -59,7 +95,7 @@ texture = ExtResource("3_ke6dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paper"]
 y_sort_enabled = true
-position = Vector2(271.5, 388)
+position = Vector2(271, 387)
 shape = SubResource("RectangleShape2D_lsv3n")
 
 [node name="Book" type="StaticBody2D" parent="."]
@@ -74,20 +110,6 @@ texture = ExtResource("3_lsoag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
 y_sort_enabled = true
 position = Vector2(294.5, 356.75)
-shape = SubResource("RectangleShape2D_lsv3n")
-
-[node name="Radio" type="StaticBody2D" parent="."]
-position = Vector2(650, -39)
-collision_mask = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Radio"]
-y_sort_enabled = true
-position = Vector2(151, 358)
-texture = ExtResource("5_40aew")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
-y_sort_enabled = true
-position = Vector2(152, 359)
 shape = SubResource("RectangleShape2D_lsv3n")
 
 [node name="Sweater" type="StaticBody2D" parent="."]
@@ -118,3 +140,29 @@ texture = ExtResource("7_3qevw")
 y_sort_enabled = true
 position = Vector2(-184.25, 265.5)
 shape = SubResource("RectangleShape2D_lsv3n")
+
+[node name="House2" type="Area2D" parent="."]
+y_sort_enabled = true
+position = Vector2(154, -40)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House2"]
+position = Vector2(172.5, 329.5)
+shape = SubResource("RectangleShape2D_wonxj")
+
+[node name="Sprite2D" type="Sprite2D" parent="House2"]
+y_sort_enabled = true
+position = Vector2(183, 296)
+texture = ExtResource("1_ypqej")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="House2"]
+position = Vector2(156, 290)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House2/StaticBody2D"]
+position = Vector2(19, 43)
+shape = SubResource("RectangleShape2D_cc1iw")
+
+[connection signal="mouse_entered" from="House" to="." method="_on_house_mouse_entered"]
+[connection signal="mouse_exited" from="House" to="." method="_on_house_mouse_exited"]
+[connection signal="body_entered" from="House/House2D" to="fox_girl" method="_on_house_2d_body_entered"]
+[connection signal="body_entered" from="House2" to="." method="_on_house_2_body_entered"]

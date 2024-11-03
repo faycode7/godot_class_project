@@ -30,3 +30,7 @@ func animation_director():
 		elif direction.y !=0:
 			current_dir = "up" if direction.y < 0 else "down"
 	animation.play(movetype + current_dir)
+	
+	
+	
+	
