@@ -47,17 +47,17 @@ func has_popped():
 		await get_tree().create_timer(1).timeout
 		time_to_go_up = true
 		spawn_droplet(+30)
-		spawn_droplet(+10)
+		#spawn_droplet(+10)
 		spawn_droplet(-10)
-		spawn_droplet(-30)
+		#spawn_droplet(-30)
 		spawn_droplet(-50)
-		spawn_droplet(-70)
+		#spawn_droplet(-70)
 		spawn_droplet(-90)
-		spawn_droplet(-110)
+		#spawn_droplet(-110)
 		spawn_droplet(-130)
-		spawn_droplet(-150)
+		#spawn_droplet(-150)
 		spawn_droplet(-170)
-		spawn_droplet(-190)
+		#spawn_droplet(-190)
 		spawn_droplet(-210)
 		
 		#spawn_droplet(-190)

@@ -8,7 +8,7 @@ var list_of_levels = ["res://Bullet Hell Implimentation/enemies/dollop_spawner.t
 
 func _ready():
 	update_hp()
-	#start_fight()
+	player_turn()
 	healthbar.max_value = Glob.max_health
 
 func update_hp():
@@ -24,12 +24,23 @@ func spawn_death():
 		#enemy.get_child(0).queue_free()
 	#var level = load(list_of_levels[Glob.current_level]).instantiate()
 	#enemy.add_child(level)
-
 func setPosition(setPos):
 	player.position = setPos 
 
 func apply_damage(damage):
 	enemy.health -= damage
+func player_turn():
+	$fight_menu.toggle_menu(true)
+	$Player_fox.set_physics_process(false)
+	$Player_fox.position = Vector2(0,91)
+	
+func next_turn():
+	$fight_menu.toggle_menu(false)
+	$enemy_state_machine.attack()
+	$Player_fox.set_physics_process(true)
+	await get_tree().create_timer(5).timeout
+	#TODO instead of timer, wait for final signal flag for enemy attack
+	player_turn()
 	
 	
 	

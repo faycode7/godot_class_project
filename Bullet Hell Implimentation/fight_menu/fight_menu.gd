@@ -1,10 +1,22 @@
 extends Node2D
 var selected = 1
+func _ready() -> void:
+	update_select()
+	
+func toggle_menu(flag):
+	set_process_unhandled_input(flag)
+	visible = flag
 
+func finished_turn():
+	toggle_menu(false)
+	get_parent().next_turn()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	var dir = Input.get_axis("left","right")
-	if selected > 0 or selected < 4:
-		selected += dir
+	selected += dir
+	selected = 1 if selected < 1 else selected
+	selected = 3 if selected > 3 else selected
+	print(selected)
 	update_select()
 	if Input.is_action_just_pressed("input"):
 		select_input()

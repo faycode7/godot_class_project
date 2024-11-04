@@ -10,7 +10,6 @@ var enemy_variables
 func _ready():
 	get_attack_available()
 	enemy_start()
-	attack()
 
 func get_attack_available():
 	if script_holder.get_child_count() > 0:
@@ -23,7 +22,6 @@ func attack():
 	attack_counter = randi_range(0,enemy_variables.attack_list.size()-1)
 	var attack = load(enemy_variables.attack_list[attack_counter]).instantiate()
 	attacks.add_child(attack)
-
 func enemy_start():
 	sprite_setter(enemy_variables.sprite)
 	health_setter(enemy_variables.health)

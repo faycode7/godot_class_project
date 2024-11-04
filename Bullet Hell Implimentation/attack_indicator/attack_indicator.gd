@@ -22,6 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("input"):
 		$Timer.stop()
 		if attack_value == 11: attack_value += 5
-		$"..".apply_damage(attack_value * 5)
+		get_parent().get_parent().apply_damage(attack_value * 5)
 		print(attack_value)
+		await get_tree().create_timer(3).timeout
+		get_parent().finished_turn()
+		queue_free()
 		
