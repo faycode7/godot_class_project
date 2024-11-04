@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ycynwff253v8"]
+[gd_scene load_steps=9 format=3 uid="uid://ycynwff253v8"]
 
 [ext_resource type="PackedScene" uid="uid://essfoo8o6ptq" path="res://Bullet Hell Implimentation/scenes/player_fox.tscn" id="1_8ervx"]
 [ext_resource type="Script" path="res://Bullet Hell Implimentation/scenes/bullet_hell_imp.gd" id="1_ottdv"]
+[ext_resource type="PackedScene" uid="uid://bcu2yaeh7ff63" path="res://Bullet Hell Implimentation/fight_menu/fight_menu.tscn" id="2_8cxup"]
 [ext_resource type="Texture2D" uid="uid://shsspkj6xhkw" path="res://Art/Assets/health_bar_empty.png" id="5_hj6p3"]
+[ext_resource type="PackedScene" uid="uid://cyyf8dciaaxh2" path="res://Bullet Hell Implimentation/bosses/enemy_state_machine.tscn" id="6_urcgh"]
 [ext_resource type="Texture2D" uid="uid://bl7umgd8t6d3d" path="res://Art/Assets/health_bar_full.png" id="6_w5ets"]
 [ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="7_oo8p8"]
 
@@ -11,6 +13,8 @@ size = Vector2(382, 21)
 
 [node name="BulletHellImp" type="Node2D"]
 script = ExtResource("1_ottdv")
+
+[node name="fight_menu" parent="." instance=ExtResource("2_8cxup")]
 
 [node name="Player_fox" parent="." instance=ExtResource("1_8ervx")]
 position = Vector2(0, 91)
@@ -70,3 +74,7 @@ offset_bottom = 26.3333
 theme_override_fonts/font = ExtResource("7_oo8p8")
 
 [node name="EnemyHolder" type="Node2D" parent="."]
+
+[node name="enemy_state_machine" parent="." instance=ExtResource("6_urcgh")]
+position = Vector2(-2, -2)
+scale = Vector2(0.6, 0.6)

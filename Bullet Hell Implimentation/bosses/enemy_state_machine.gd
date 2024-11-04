@@ -5,6 +5,7 @@ var health = 0
 var attack_counter = 0
 var enemy_variables
 @onready var attacks = $attacks
+@onready var enemy_animation = $AnimationPlayer
 
 func _ready():
 	get_attack_available()
@@ -26,5 +27,8 @@ func attack():
 func enemy_start():
 	sprite_setter(enemy_variables.sprite)
 	health_setter(enemy_variables.health)
+	set_enemy_animation()
 	#get_attack_pattern(enemy_variables.attack_list)
-	
+
+func set_enemy_animation():
+	enemy_animation.play(enemy_variables.animation)
