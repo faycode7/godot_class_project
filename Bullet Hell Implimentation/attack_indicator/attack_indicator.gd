@@ -3,6 +3,7 @@ var attack_value = 0.0
 var attack_modifier = 1
 var max_attack = 2
 @onready var line = $line
+var damage_text = "res://Bullet Hell Implimentation/attack_indicator/damage_number_popup.tscn"
 
 func move_line():
 	line.position.x += 15
@@ -22,9 +23,17 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("input"):
 		$Timer.stop()
 		if attack_value == 11: attack_value += 5
-		get_parent().get_parent().apply_damage(attack_value * 5)
+		attack_value *= 5
+		get_parent().get_parent().apply_damage(attack_value)
 		print(attack_value)
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(0.5).timeout
 		get_parent().finished_turn()
+		spawn_damage_number()
 		queue_free()
-		
+
+func spawn_damage_number():
+	var spawned = load(damage_text).instantiate()
+	spawned.position = Vector2(0,0)
+	spawned.text = str(attack_value)
+	get_parent().get_parent().add_child(spawned)
+	print(spawned.position, spawned.text)
