@@ -1,8 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyyf8dciaaxh2"]
+[gd_scene load_steps=6 format=3 uid="uid://cyyf8dciaaxh2"]
 
 [ext_resource type="Script" path="res://Bullet Hell Implimentation/bosses/enemy_state_machine.gd" id="1_qjt7s"]
 [ext_resource type="Texture2D" uid="uid://cs0817rno4wwj" path="res://Art/Assets/ball.png" id="2_11du1"]
-[ext_resource type="PackedScene" uid="uid://b35c6m2b8hmaa" path="res://enemy_attack_patterns/test_enemy_pattern.tscn" id="2_x3vii"]
+
+[sub_resource type="Animation" id="Animation_f1myi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_526w7"]
 resource_name = "bounce"
@@ -20,21 +34,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 11), Vector2(0, -11)]
 }
 
-[sub_resource type="Animation" id="Animation_f1myi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtpts"]
 _data = {
 "RESET": SubResource("Animation_f1myi"),
@@ -49,8 +48,6 @@ z_index = -5
 texture = ExtResource("2_11du1")
 
 [node name="Node" type="Node" parent="."]
-
-[node name="testEnemyPattern" parent="Node" instance=ExtResource("2_x3vii")]
 
 [node name="attacks" type="Node" parent="."]
 

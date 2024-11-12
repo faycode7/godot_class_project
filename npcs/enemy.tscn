@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuasr3t5piccs"]
+
+[ext_resource type="Script" path="res://npcs/enemy.gd" id="1_la8m0"]
+[ext_resource type="Texture2D" uid="uid://cs0817rno4wwj" path="res://Art/Assets/ball.png" id="2_5m3vb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioldt"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_la8m0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ioldt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5m3vb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

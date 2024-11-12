@@ -5,7 +5,7 @@ var current_dir = "down"
 var direction = Vector2(0,0)
 @onready var animation = $Sprite2D/AnimationPlayer
 @onready var sprite = $Sprite2D
-
+@onready var camera = $Camera2D
 func _unhandled_input(event):
 	direction = Input.get_vector("left","right","up","down")
 	animation_director()

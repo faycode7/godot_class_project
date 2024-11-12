@@ -6,10 +6,12 @@ extends Node2D
 var death_scene = "res://Bullet Hell Implimentation/scenes/game_over_screen.tscn"
 var list_of_levels = ["res://Bullet Hell Implimentation/enemies/dollop_spawner.tscn"]
 
-func _ready():
+func start():
 	update_hp()
 	player_turn()
-	healthbar.max_value = Glob.max_health
+	healthbar.max_value = Glob.max_health	
+	enemy.load_enemy_script(Glob.current_enemy)
+	enemy.enemy_start()
 
 func update_hp():
 	healthbar.value = Glob.player_health
@@ -29,6 +31,12 @@ func setPosition(setPos):
 
 func apply_damage(damage):
 	enemy.health -= damage
+	if enemy.health  <= 0 :
+		print("You win")
+		print ("You get", str(randi_range(0,10)) ,"coins")
+		print ("You get", str(randi_range(0,20)) ,"expirience")
+		self.queue_free()
+	
 func player_turn():
 	$fight_menu.toggle_menu(true)
 	$Player_fox.set_physics_process(false)

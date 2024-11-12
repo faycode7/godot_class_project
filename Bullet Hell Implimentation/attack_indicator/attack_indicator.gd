@@ -14,6 +14,8 @@ func move_line():
 	if line.position.x >= 179:
 		line.hide()
 		$Timer.stop()
+		spawn_damage_number("miss")
+		end_turn()
 
 func _on_timer_timeout() -> void:
 	move_line()
@@ -27,13 +29,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_parent().get_parent().apply_damage(attack_value)
 		print(attack_value)
 		await get_tree().create_timer(0.5).timeout
-		get_parent().finished_turn()
-		spawn_damage_number()
-		queue_free()
+		spawn_damage_number(attack_value)
+		end_turn()
 
-func spawn_damage_number():
+func end_turn():
+	get_parent().finished_turn()
+	queue_free()
+	
+func spawn_damage_number(string):
 	var spawned = load(damage_text).instantiate()
 	spawned.position = Vector2(0,0)
-	spawned.text = str(attack_value)
+	spawned.text = str(string)
 	get_parent().get_parent().add_child(spawned)
 	print(spawned.position, spawned.text)
