@@ -19,8 +19,8 @@ func health_setter(enemy_health):
 
 func attack():
 	attack_counter = randi_range(0,enemy_variables.attack_list.size()-1)
-	var attack = load(enemy_variables.attack_list[attack_counter]).instantiate()
-	attacks.add_child(attack)
+	var attack_init = load(enemy_variables.attack_list[attack_counter]).instantiate()
+	attacks.add_child(attack_init)
 
 func enemy_start():
 	get_attack_available()

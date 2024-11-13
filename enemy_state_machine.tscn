@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Bullet Hell Implimentation/bosses/enemy_state_machine.gd" id="1_sds6r"]
 [ext_resource type="Texture2D" uid="uid://cs0817rno4wwj" path="res://Art/Assets/ball.png" id="2_rw66j"]
-[ext_resource type="PackedScene" uid="uid://b35c6m2b8hmaa" path="res://enemy_attack_patterns/test_enemy_pattern.tscn" id="3_pgc06"]
+[ext_resource type="PackedScene" uid="uid://b35c6m2b8hmaa" path="res://enemy_variables/test_enemy.tscn" id="3_pgc06"]
 
 [sub_resource type="Animation" id="Animation_f1myi"]
 length = 0.001

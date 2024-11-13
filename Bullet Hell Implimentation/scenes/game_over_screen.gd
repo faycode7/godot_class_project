@@ -8,7 +8,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 	elif Input.is_action_just_pressed("down"):
 		selected = 2
 		move_sprite(85)
-	elif Input.is_action_just_pressed("interact"):
+	elif Input.is_action_just_pressed("input"):
 		if selected == 1:
 			try_again()
 func move_sprite(pos):
@@ -17,7 +17,7 @@ func try_again():
 	get_parent().start_fight()
 	Glob.player_health = Glob.max_health
 	get_parent().update_hp()
-	get_parent().player.position = Vector2[0.91]
+	get_parent().player.position = Vector2(0,91)
 	self.queue_free()
 	
 	

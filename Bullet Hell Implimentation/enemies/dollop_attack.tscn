@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://48ikau4nkbge" path="res://Art/Assets/drop.png" id="2_ueknm"]
 
 [node name="dollopAttack" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 512
 collision_mask = 0
 script = ExtResource("1_cfab3")
 

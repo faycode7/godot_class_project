@@ -3,6 +3,9 @@ var speed = 200
 var invincibility = false
 @onready var main = $".."
 
+func _ready():
+	print(main)
+	
 func  _physics_process(_delta):
 	var direction = Input.get_vector("left","right","up","down")
 	velocity = speed * direction
@@ -15,7 +18,7 @@ func damage():
 		invincibility = true
 		Glob.player_health -= 1
 		main.update_hp()
-	if Glob.player_health == 0 :
+	if Glob.player_health <= 0 :
 		main.spawn_death()
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	damage()
