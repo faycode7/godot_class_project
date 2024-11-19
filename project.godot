@@ -25,6 +25,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 main="the main scene"
+bullet_hell_controller=""
 
 [input]
 

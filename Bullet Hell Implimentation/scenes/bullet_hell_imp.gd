@@ -42,14 +42,15 @@ func player_turn():
 	$fight_menu.toggle_menu(true)
 	$Player_fox.set_physics_process(false)
 	$Player_fox.position = Vector2(0,91)
+	$Player_fox.invincibility = true
+	
 	
 func next_turn():
 	$fight_menu.toggle_menu(false)
 	$enemy_state_machine.attack()
 	$Player_fox.set_physics_process(true)
-	await get_tree().create_timer(5).timeout
-	#TODO instead of timer, wait for final signal flag for enemy attack
-	player_turn()
+	$Player_fox.invincibility = false
+	
 	
 func end_fight():
 	get_tree().paused = false

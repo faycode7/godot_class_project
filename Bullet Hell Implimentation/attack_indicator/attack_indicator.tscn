@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dfeaeppo6rgfr" path="res://Art/Assets/eyeball_line.png" id="3_nh5j4"]
 
 [node name="attack_indicator" type="Node2D"]
+z_index = 2
+position = Vector2(0, 85)
 script = ExtResource("1_1nrxq")
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
@@ -26,8 +29,5 @@ texture = ExtResource("3_nh5j4")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.06
 autostart = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

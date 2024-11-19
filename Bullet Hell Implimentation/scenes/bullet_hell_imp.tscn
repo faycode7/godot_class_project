@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et4kl"]
 size = Vector2(382, 21)
 
-[node name="BulletHellImp" type="Node2D"]
+[node name="BulletHellImp" type="Node2D" groups=["bullet_hell_controller"]]
 process_mode = 3
 position = Vector2(0, -60)
 script = ExtResource("1_ottdv")
@@ -59,9 +59,10 @@ position = Vector2(-114, 158)
 scale = Vector2(0.6, 0.6)
 
 [node name="healthbar" type="TextureProgressBar" parent="GUI"]
-offset_left = 76.6667
-offset_right = 460.667
-offset_bottom = 42.0
+offset_left = 75.0
+offset_top = 56.6667
+offset_right = 459.0
+offset_bottom = 98.6667
 scale = Vector2(0.6, 0.6)
 texture_under = ExtResource("5_hj6p3")
 texture_progress = ExtResource("6_w5ets")
@@ -69,14 +70,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="GUI"]
 offset_left = 313.333
-offset_top = 3.33333
+offset_top = 56.6667
 offset_right = 353.333
-offset_bottom = 26.3333
+offset_bottom = 79.6667
 theme_override_fonts/font = ExtResource("7_oo8p8")
 metadata/_edit_use_anchors_ = true
 
 [node name="EnemyHolder" type="Node2D" parent="."]
-visible = false
 
 [node name="enemy_state_machine" parent="." instance=ExtResource("6_urcgh")]
 position = Vector2(-2, -2)
