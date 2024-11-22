@@ -3,8 +3,9 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "down"
 var direction = Vector2(0,0)
-var health
+var health: int
 var attack
+var money: int
 @onready var animation = $Sprite2D/AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var camera = $Camera2D
