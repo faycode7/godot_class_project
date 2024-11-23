@@ -8,6 +8,7 @@ var health = player.health
 var food_type: String
 var energy: int
 
+//gets value from parent Item (item.gd)
 func _ready() -> void:
 	stackable = true
 	item_type = "food"
