@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5emlum5ret1s"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/cake_tower.gd" id="1_j36wu"]
+[ext_resource type="PackedScene" uid="uid://8td683vtuhd5" path="res://Bullet Hell Implimentation/enemies/cake_slice.tscn" id="1_mktfu"]
+
+[node name="cake_tower" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_j36wu")
+
+[node name="cake_slice" parent="." instance=ExtResource("1_mktfu")]
+
+[node name="cake_slice2" parent="." instance=ExtResource("1_mktfu")]
+position = Vector2(0, 36)
+cake_value = 1
+
+[node name="cake_slice3" parent="." instance=ExtResource("1_mktfu")]
+position = Vector2(0, 72)
+cake_value = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

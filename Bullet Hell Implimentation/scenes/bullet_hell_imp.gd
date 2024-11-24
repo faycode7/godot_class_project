@@ -60,3 +60,8 @@ func end_fight():
 	get_tree().call_group("main","end_fight")
 	self.queue_free()
 	
+func close():
+	get_parent().get_parent().player.set_process_unhandled_input(true)
+	get_parent().get_parent().player.set_physics_process(true)
+	queue_free()
+	

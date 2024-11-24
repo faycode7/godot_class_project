@@ -79,5 +79,5 @@ metadata/_edit_use_anchors_ = true
 [node name="EnemyHolder" type="Node2D" parent="."]
 
 [node name="enemy_state_machine" parent="." instance=ExtResource("6_urcgh")]
-position = Vector2(-2, -2)
+position = Vector2(0, -2)
 scale = Vector2(0.6, 0.6)
