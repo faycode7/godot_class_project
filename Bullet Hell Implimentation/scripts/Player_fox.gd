@@ -20,6 +20,7 @@ func damage():
 		main.update_hp()
 	if Glob.player_health <= 0 :
 		main.spawn_death()
+
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	damage()
 	

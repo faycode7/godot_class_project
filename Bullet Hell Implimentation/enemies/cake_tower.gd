@@ -10,6 +10,7 @@ func _ready():
 	set_direction()
 	await get_tree().create_timer(0.5).timeout
 	$Timer.start()
+	
 func set_random_variables():
 	cake_level = randi_range(0,2)
 	

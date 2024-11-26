@@ -3,8 +3,10 @@ extends Node2D
 @onready var health_nums = $GUI/Label
 @onready var enemy = $enemy_state_machine
 @onready var player = $Player_fox
+@onready var box: Node2D = $box
 var death_scene = "res://Bullet Hell Implimentation/scenes/game_over_screen.tscn"
 var list_of_levels = ["res://Bullet Hell Implimentation/enemies/dollop_spawner.tscn"]
+
 
 
 func _ready():
@@ -65,3 +67,12 @@ func close():
 	get_parent().get_parent().player.set_physics_process(true)
 	queue_free()
 	
+func setbox_small():
+	box.position = Vector2(-80,56)
+	box.rotation_degrees = -90
+	box.scale.x = 0.5 
+
+func setbox_normal():
+	box.position = Vector2(0,0)
+	box.rotation_degrees = 0
+	box.scale.x = 1

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c05s5r6qfx13p"]
+
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/middle_spoon.gd" id="1_43cif"]
+[ext_resource type="Texture2D" uid="uid://b5kh57fqol2hk" path="res://Art/Assets/middle_spoon.png" id="1_j4ka7"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = 1.5708
+script = ExtResource("1_43cif")
+
+[node name="middle_spoon" type="Sprite2D" parent="."]
+texture = ExtResource("1_j4ka7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 31, -2, 32, 2, 32, 3, 31, 3, -13, 5, -13, 9, -17, 9, -28, 5, -32, -5, -32, -9, -28, -9, -17, -5, -13, -3, -13)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ycynwff253v8"]
+[gd_scene load_steps=12 format=3 uid="uid://ycynwff253v8"]
 
 [ext_resource type="PackedScene" uid="uid://essfoo8o6ptq" path="res://Bullet Hell Implimentation/scenes/player_fox.tscn" id="1_8ervx"]
 [ext_resource type="Script" path="res://Bullet Hell Implimentation/scenes/bullet_hell_imp.gd" id="1_ottdv"]
@@ -7,6 +7,90 @@
 [ext_resource type="PackedScene" uid="uid://cyyf8dciaaxh2" path="res://Bullet Hell Implimentation/bosses/enemy_state_machine.tscn" id="6_urcgh"]
 [ext_resource type="Texture2D" uid="uid://bl7umgd8t6d3d" path="res://Art/Assets/health_bar_full.png" id="6_w5ets"]
 [ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="7_oo8p8"]
+
+[sub_resource type="Animation" id="Animation_beatd"]
+resource_name = "set_box_small"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-80, 56)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ie5iy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_443fo"]
+_data = {
+"RESET": SubResource("Animation_ie5iy"),
+"set_box_small": SubResource("Animation_beatd")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et4kl"]
 size = Vector2(382, 21)
@@ -21,29 +105,36 @@ script = ExtResource("1_ottdv")
 [node name="Player_fox" parent="." instance=ExtResource("1_8ervx")]
 position = Vector2(0, 91)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="box" type="Node2D" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="box"]
 z_index = -2
-offset_left = -187.0
-offset_top = 19.0
-offset_right = 195.0
-offset_bottom = 153.0
+offset_left = -184.0
+offset_top = 10.0
+offset_right = 198.0
+offset_bottom = 144.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="box"]
 z_index = -2
-offset_left = -181.0
-offset_top = 24.0
-offset_right = 189.0
-offset_bottom = 147.0
+offset_left = -178.0
+offset_top = 15.0
+offset_right = 192.0
+offset_bottom = 138.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D" type="StaticBody2D" parent="box/ColorRect"]
 collision_layer = 256
 collision_mask = 256
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ColorRect/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="box/ColorRect/StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 370, 0, 370, 123, 0, 123, 0, 0, -37, -7, -47, 171, 381, 160, 386, -21, -35, -25, -36, -6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="box"]
+libraries = {
+"": SubResource("AnimationLibrary_443fo")
+}
 
 [node name="Floor" type="StaticBody2D" parent="."]
 collision_layer = 4
