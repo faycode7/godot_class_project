@@ -10,5 +10,3 @@ func end_fight():
 	player.set_process_unhandled_input(true)
 	player.set_physics_process(true)
 	
-	
-	

@@ -68,11 +68,7 @@ func close():
 	queue_free()
 	
 func setbox_small():
-	box.position = Vector2(-80,56)
-	box.rotation_degrees = -90
-	box.scale.x = 0.5 
-
+	$box/AnimationPlayer.play("set_box_small")
+	
 func setbox_normal():
-	box.position = Vector2(0,0)
-	box.rotation_degrees = 0
-	box.scale.x = 1
+	$box/AnimationPlayer.play("set_box_normal")

@@ -5,6 +5,8 @@
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 rotation = 1.5708
+collision_layer = 512
+collision_mask = 0
 script = ExtResource("1_43cif")
 
 [node name="middle_spoon" type="Sprite2D" parent="."]
