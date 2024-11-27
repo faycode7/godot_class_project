@@ -8,15 +8,15 @@ func _on_play_pressed() -> void:
 
 func _on_controls_pressed() -> void:
 	print("Getting controls")
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Menu/menu_scenes/controls.tscn")
 
 func _on_options_pressed() -> void:
 	print("Options")
-	get_tree().change_scene_to_file("res://Menu/options_menu.tscn")
+	get_tree().change_scene_to_file("res://Menu/menu_scenes/options_menu.tscn")
 
 func _on_credits_pressed() -> void:
 	print("Getting credits")
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Menu/menu_scenes/credits.tscn")
 
 func _on_exit_pressed() -> void:
 	print("Exiting...")

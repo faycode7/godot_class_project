@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="godot_class_project"
-run/main_scene="res://Menu/menu.tscn"
+run/main_scene="res://Menu/menu_scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 
 [autoload]
