@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://1thaqtg7b51v"]
 
-[ext_resource type="Script" path="res://Menu/menu.gd" id="1_knuly"]
-[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_i8yji"]
-[ext_resource type="FontFile" uid="uid://b6opit5w86lpd" path="res://Fonts/odaria-font/Odaria-AR0wL.otf" id="2_y3t5f"]
-[ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="3_llw7x"]
+[ext_resource type="Script" path="res://Menu/menu_scripts/menu.gd" id="1_kngmn"]
+[ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_cbqpa"]
+[ext_resource type="FontFile" uid="uid://b6opit5w86lpd" path="res://Fonts/odaria-font/Odaria-AR0wL.otf" id="3_odfo1"]
+[ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="4_8r0mq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6c5u2"]
 bg_color = Color(0.845405, 0.891373, 0.995929, 1)
@@ -34,7 +34,7 @@ offset_left = 6.0
 offset_right = 6.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_knuly")
+script = ExtResource("1_kngmn")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_i8yji")
+texture = ExtResource("2_cbqpa")
 stretch_mode = 6
 
 [node name="Title" type="Label" parent="."]
@@ -63,7 +63,7 @@ theme_override_colors/font_outline_color = Color(0.155737, 0.145965, 0.436314, 1
 theme_override_constants/shadow_offset_y = 9
 theme_override_constants/outline_size = 9
 theme_override_constants/shadow_outline_size = 15
-theme_override_fonts/font = ExtResource("2_y3t5f")
+theme_override_fonts/font = ExtResource("3_odfo1")
 theme_override_font_sizes/font_size = 70
 text = "The game Title"
 horizontal_alignment = 1
@@ -92,7 +92,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.204793, 0.424378, 0.831968, 1)
-theme_override_fonts/font = ExtResource("3_llw7x")
+theme_override_fonts/font = ExtResource("4_8r0mq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_6c5u2")
 text = "Play"
@@ -100,7 +100,7 @@ text = "Play"
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_llw7x")
+theme_override_fonts/font = ExtResource("4_8r0mq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3j25")
 text = "Controls"
@@ -108,7 +108,7 @@ text = "Controls"
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_llw7x")
+theme_override_fonts/font = ExtResource("4_8r0mq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3j25")
 text = "Options"
@@ -116,7 +116,7 @@ text = "Options"
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_llw7x")
+theme_override_fonts/font = ExtResource("4_8r0mq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_p3j25")
 text = "Credits"
@@ -125,7 +125,7 @@ text = "Credits"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.204793, 0.424378, 0.831968, 1)
-theme_override_fonts/font = ExtResource("3_llw7x")
+theme_override_fonts/font = ExtResource("4_8r0mq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_6c5u2")
 text = "Exit"

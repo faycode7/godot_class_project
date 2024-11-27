@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpob0bi6k07kq"]
+
+[ext_resource type="Script" path="res://Menu/menu_scripts/controls.gd" id="1_bxh6u"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bxh6u")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 540.0
+offset_top = 523.0
+offset_right = 631.0
+offset_bottom = 602.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
