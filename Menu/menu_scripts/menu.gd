@@ -1,10 +1,15 @@
 extends Control
 @onready var options: Button = $MarginContainer/VBoxContainer/Options as Button
 
+func _ready():
+	#To be able to navigate the menu with the arrow keys, we set the Play button as having the default focus when opening the game
+	$MarginContainer/VBoxContainer/Play.grab_focus()
+	#need to make it so that mouse and button up,down have the same graphics
+
+
 func _on_play_pressed() -> void:
 	print("Playing!")
 	get_tree().change_scene_to_file("res://1st scene/1_st_scene.tscn")
-
 
 func _on_controls_pressed() -> void:
 	print("Getting controls")

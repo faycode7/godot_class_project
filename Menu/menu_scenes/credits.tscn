@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmbtpba4x757h"]
+[gd_scene load_steps=3 format=3 uid="uid://dmbtpba4x757h"]
 
 [ext_resource type="Script" path="res://Menu/menu_scripts/credits.gd" id="1_ludsl"]
+[ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="2_bjyp5"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -26,6 +27,7 @@ layout_mode = 2
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bjyp5")
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

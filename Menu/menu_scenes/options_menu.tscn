@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgkbgt0mkcums"]
+[gd_scene load_steps=5 format=3 uid="uid://cgkbgt0mkcums"]
 
 [ext_resource type="Script" path="res://Menu/menu_scripts/options_menu.gd" id="1_w33mw"]
 [ext_resource type="Texture2D" uid="uid://cg7hbt3px07hu" path="res://Art/Assets/gamecover.png" id="2_jqr4g"]
+[ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="3_khght"]
+[ext_resource type="AudioStream" uid="uid://sk3xksisa2js" path="res://Menu/testAudio.mp3" id="4_k6622"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -12,18 +14,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w33mw")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.419813, 0.419813, 0.419813, 1)
-
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.419813, 0.419813, 0.419813, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -67.0
-offset_right = 5.0
-offset_bottom = 66.3565
+offset_left = 4.0
+offset_top = -72.0
+offset_right = 4.0
+offset_bottom = 61.3565
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jqr4g")
@@ -39,14 +39,60 @@ offset_bottom = 367.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khght")
 text = "Volume"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khght")
+text = "mute"
+
+[node name="ResolutionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khght")
+text = "Resolution"
+
+[node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 2
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "640x360"
+popup/item_3/id = 3
+
+[node name="Fullscreen" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_khght")
+text = "fullscreen"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 498.0
+offset_top = 521.0
+offset_right = 613.0
+offset_bottom = 548.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_khght")
 text = "Back to menu"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[node name="TestAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k6622")
+volume_db = -19.762
+autoplay = true
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
