@@ -40,6 +40,7 @@ func item():
 	pass
 	
 func flee():
+	
 	get_parent().close()
 	
 	

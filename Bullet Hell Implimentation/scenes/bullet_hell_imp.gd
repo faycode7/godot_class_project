@@ -19,6 +19,7 @@ func start_fight():
 	if Glob.current_enemy_script != "":
 		enemy.load_enemy_script(Glob.current_enemy_script)
 		enemy.enemy_start()
+
 func update_hp():
 	healthbar.value = Glob.player_health
 	health_nums.text = str(Glob.player_health) + "/" + str(Glob.max_health)
@@ -63,8 +64,7 @@ func end_fight():
 	self.queue_free()
 	
 func close():
-	get_parent().get_parent().player.set_process_unhandled_input(true)
-	get_parent().get_parent().player.set_physics_process(true)
+	get_tree().call_group("main","end_fight")
 	queue_free()
 	
 func setbox_small():
