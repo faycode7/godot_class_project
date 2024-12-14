@@ -22,6 +22,12 @@ Glob="*res://Glob.gd"
 
 window/stretch/mode="viewport"
 
+[file_customization]
+
+folder_colors={
+"res://Rooms/": "purple"
+}
+
 [global_group]
 
 main="the main scene"

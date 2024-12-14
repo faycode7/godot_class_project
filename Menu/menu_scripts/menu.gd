@@ -9,7 +9,7 @@ func _ready():
 
 func _on_play_pressed() -> void:
 	print("Playing!")
-	get_tree().change_scene_to_file("res://1st scene/1_st_scene.tscn")
+	get_tree().change_scene_to_file("res://main_scene.tscn")
 
 func _on_controls_pressed() -> void:
 	print("Getting controls")
