@@ -23,7 +23,7 @@ func _on_resolution_item_selected(index):
 
 #need to make un-fullscreen work!
 func _on_fullscreen_toggled(toggled_on: bool) -> void:
-	#if button_pressed() == true:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	#else:
-		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
