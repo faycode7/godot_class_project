@@ -22,7 +22,7 @@ tile_map_data = PackedByteArray("AAABAPz/AAAGAAUAAAABAP3/AAAGAAUAAAABAP7/AAAGAAU
 
 [node name="door" parent="." instance=ExtResource("3_oedif")]
 position = Vector2(72, 158)
-door_path = "1st_scene"
+door_path = "ad_livingroom"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]

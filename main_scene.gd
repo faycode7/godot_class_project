@@ -1,11 +1,11 @@
 extends Node2D
 @onready var player = $fox_girl #onready for nodes ONLY!!!!!
 func spawn_fight():
-	player.set_process_unhandled_input(false)
-	player.set_physics_process(false)
 	var spawned = load("res://Bullet Hell Implimentation/scenes/bullet_hell_imp.tscn").instantiate()
 	$Control.call_deferred("add_child",spawned)
 	player.camera.zoom = Vector2(2,2)
+	player.set_process_unhandled_input(false)
+	player.set_physics_process(false)
 
 func end_fight():
 	player.set_process_unhandled_input(true)
@@ -18,4 +18,9 @@ func load_room():
 	$current_room.call_deferred("add_child",spawned)
 
 func set_player_pos(pos):
-	$fox_girl.global_position = pos
+	if Glob.custom_position!= Vector2(0,0):
+		$fox_girl.global_position = Glob.custom_position
+		Glob.custom_position = Vector2(0,0)
+	else:
+		$fox_girl.global_position = pos
+	
