@@ -1,16 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfnaeqiocksvp"]
+[gd_scene load_steps=2 format=3 uid="uid://bfnaeqiocksvp"]
 
 [ext_resource type="Script" path="res://doors/door.gd" id="1_4cdkv"]
-[ext_resource type="AudioStream" uid="uid://b86fy01a56p2y" path="res://Audio/Sfx/door_sfx.mp3" id="2_tlnxb"]
 
 [node name="door" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4cdkv")
-
-[node name="door_sfx" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_tlnxb")
-volume_db = -4.742
-pitch_scale = 1.53
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

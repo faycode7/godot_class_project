@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://b317k6qxkeqo1"]
+
+[ext_resource type="Script" path="res://Menu/buy_menu.gd" id="1_quert"]
+
+[node name="buy_menu" type="CanvasLayer"]
+script = ExtResource("1_quert")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 394.0
+offset_top = 202.0
+offset_right = 434.0
+offset_bottom = 242.0
+scale = Vector2(2.2869, 1.90052)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+offset_right = 155.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+offset_right = 155.0
+offset_bottom = 86.0
+bbcode_enabled = true
+text = "lolololololo"
+fit_content = true
+scroll_active = false
+
+[node name="no" type="RichTextLabel" parent="Control"]
+offset_left = 110.0
+offset_top = 87.0
+offset_right = 150.0
+offset_bottom = 110.0
+bbcode_enabled = true
+text = "NO"
+fit_content = true
+scroll_active = false
+
+[node name="yes" type="RichTextLabel" parent="Control"]
+offset_left = 9.0
+offset_top = 87.0
+offset_right = 50.0
+offset_bottom = 111.0
+bbcode_enabled = true
+text = "YES"
+fit_content = true
+scroll_active = false

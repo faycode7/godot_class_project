@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://po7kvexi7ke4"]
+[gd_scene load_steps=8 format=4 uid="uid://po7kvexi7ke4"]
 
 [ext_resource type="PackedScene" uid="uid://ctp35k2fh04i5" path="res://tile_map.tscn" id="1_0nb8r"]
 [ext_resource type="Script" path="res://Rooms/room_script.gd" id="1_g7okh"]
@@ -10,6 +10,9 @@ size = Vector2(26, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5r74a"]
 size = Vector2(787, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21ymr"]
+size = Vector2(30.5, 66)
 
 [node name="outside" type="Node2D"]
 script = ExtResource("1_g7okh")
@@ -44,3 +47,11 @@ shape = SubResource("RectangleShape2D_sjql5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(589.5, 252.5)
 shape = SubResource("RectangleShape2D_5r74a")
+
+[node name="door2" parent="." instance=ExtResource("2_mwwt8")]
+door_path = "outside_left"
+custom_spawn_pos = Vector2(508, 203)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2"]
+position = Vector2(215.75, 522)
+shape = SubResource("RectangleShape2D_21ymr")
