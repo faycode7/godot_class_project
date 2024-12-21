@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1hkk746p3asr"]
+[gd_scene load_steps=10 format=3 uid="uid://b1hkk746p3asr"]
 
 [ext_resource type="Texture2D" uid="uid://ds4cyw3vlbo44" path="res://Art/Backgrounds/house_ex.png" id="1_ypqej"]
 [ext_resource type="Texture2D" uid="uid://bfk2tc364frhv" path="res://Art/Assets/paper.png" id="3_ke6dc"]
 [ext_resource type="Texture2D" uid="uid://dg70pbt62gb1q" path="res://Art/Assets/notebook.png" id="3_lsoag"]
-[ext_resource type="Texture2D" uid="uid://dkvq2gv2bcir8" path="res://Art/Assets/sweater.png" id="6_rq04e"]
 [ext_resource type="PackedScene" uid="uid://cuasr3t5piccs" path="res://npcs/enemy.tscn" id="6_vftxi"]
 [ext_resource type="Texture2D" uid="uid://uy1of3n2nhqd" path="res://Art/Assets/corpse.png" id="7_3qevw"]
 
@@ -49,21 +48,6 @@ texture = ExtResource("3_lsoag")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
 y_sort_enabled = true
 position = Vector2(294.5, 356.75)
-shape = SubResource("RectangleShape2D_lsv3n")
-
-[node name="Sweater" type="StaticBody2D" parent="."]
-y_sort_enabled = true
-position = Vector2(762, 169)
-collision_mask = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Sweater"]
-y_sort_enabled = true
-position = Vector2(198, 301.5)
-texture = ExtResource("6_rq04e")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sweater"]
-y_sort_enabled = true
-position = Vector2(197.5, 299.5)
 shape = SubResource("RectangleShape2D_lsv3n")
 
 [node name="Corpse" type="StaticBody2D" parent="."]

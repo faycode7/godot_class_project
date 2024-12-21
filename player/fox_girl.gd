@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const speed = 100
+var speed = 100
+const SPRINT_SPEED = 250
 var current_dir = "down"
 var direction = Vector2(0,0)
 var health: int
@@ -27,6 +28,11 @@ func apply_movement_velocity():
 func animation_director():
 	var movetype = "idle_" if direction == Vector2(0,0) else "walk_"
 	if direction!= Vector2(0,0):
+		#check if player is running
+		if Input.is_action_pressed("run"):
+			speed = SPRINT_SPEED
+		else:
+			speed = 100
 		if direction.x!=0 && direction.y == 0:
 			current_dir = "right"
 			if direction.x < 0:

@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://ecruqmvbq1wo"]
+
+[ext_resource type="FontFile" uid="uid://b7yeytx6bpr3p" path="res://Fonts/glitch-font/Glitchdemo-lxgGq.ttf" id="1_bn02a"]
+[ext_resource type="Texture2D" uid="uid://b7pdqvxdw4orh" path="res://Art/Characters/Shoplady_portrait.png" id="2_axuh6"]
+
+[node name="LadydDialog" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -254.0
+offset_right = 574.0
+offset_bottom = 318.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 51.0
+offset_right = 736.0
+offset_bottom = 263.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 119.0
+offset_top = 8.0
+offset_right = 228.0
+offset_bottom = 115.0
+text = "Life is"
+
+[node name="Label" type="Label" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 171.0
+offset_right = 423.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("1_bn02a")
+theme_override_font_sizes/font_size = 20
+text = "School? Oh honey, I'm
+sorry. These were some 
+of the hardest years of
+my life. it's hard to get
+by nowdays but at least
+I don't have to go there
+anymore. Persevere, hun."
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 67.0
+offset_right = 458.0
+offset_bottom = 245.0
+color = Color(0.911239, 0.870748, 0.877844, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -3.0
+offset_right = 509.0
+offset_bottom = 266.0
+texture = ExtResource("2_axuh6")
+stretch_mode = 4

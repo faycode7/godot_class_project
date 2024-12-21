@@ -16,11 +16,13 @@ scale = Vector2(2.2869, 1.90052)
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_right = 155.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_right = 155.0
 offset_bottom = 86.0
 bbcode_enabled = true
@@ -29,6 +31,7 @@ fit_content = true
 scroll_active = false
 
 [node name="no" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 110.0
 offset_top = 87.0
 offset_right = 150.0
@@ -39,6 +42,7 @@ fit_content = true
 scroll_active = false
 
 [node name="yes" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 87.0
 offset_right = 50.0
