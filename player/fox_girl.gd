@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 100
-const SPRINT_SPEED = 250
+const SPRINT_SPEED = 180
 var current_dir = "down"
 var direction = Vector2(0,0)
 var health: int

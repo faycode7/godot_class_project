@@ -9,9 +9,7 @@ var custom_position = Vector2.ZERO
 var current_money = 10
 var inventory = ["cheese"]
 var player_movement = true
-
-
-
+var player_damage = 5
 
 var item_descriptions = {
 	"bread":"Heals 3 hp",

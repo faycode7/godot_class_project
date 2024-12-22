@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4mry54bay58"]
+
+[ext_resource type="Script" path="res://Menu/inventory.gd" id="1_kx1gh"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -322.0
+offset_right = 579.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kx1gh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -160.5
+offset_right = 170.5
+offset_bottom = 166.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 168.0
+offset_right = 744.0
+offset_bottom = 191.0
+bbcode_enabled = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 430.0
+offset_right = 749.0
+offset_bottom = 493.0
+bbcode_enabled = true
+text = "cheese"
+scroll_active = false

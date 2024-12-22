@@ -26,7 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		$Timer.stop()
 		if attack_value == 11: attack_value += 5
 		attack_value *= 5
-		get_parent().get_parent().apply_damage(attack_value)
+		get_parent().get_parent().apply_damage(attack_value + Glob.player_attack)
 		print(attack_value)
 		await get_tree().create_timer(0.5).timeout
 		spawn_damage_number(attack_value)
