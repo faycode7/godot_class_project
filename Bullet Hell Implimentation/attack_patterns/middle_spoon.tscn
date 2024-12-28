@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c05s5r6qfx13p"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/middle_spoon.gd" id="1_43cif"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/middle_spoon.gd" id="1_43cif"]
 [ext_resource type="Texture2D" uid="uid://b5kh57fqol2hk" path="res://Art/Assets/middle_spoon.png" id="1_j4ka7"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]

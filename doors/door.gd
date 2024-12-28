@@ -9,3 +9,6 @@ func load_room():
 	Glob.room_to_load = door_path
 	Glob.custom_position = custom_spawn_pos
 	get_tree().call_group("main","load_room")
+
+func selected():
+	load_room()

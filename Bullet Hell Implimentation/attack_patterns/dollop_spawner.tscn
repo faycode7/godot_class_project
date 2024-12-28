@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drckpv6pqvmgn"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/dollop_spawner.gd" id="1_hjdpv"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/dollop_spawner.gd" id="1_hjdpv"]
 
 [node name="dollop_spawner" type="Node2D"]
 script = ExtResource("1_hjdpv")

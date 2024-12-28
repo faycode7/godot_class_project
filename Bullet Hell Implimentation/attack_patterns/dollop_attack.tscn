@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bunay7ry7s18i"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/dollop_attack.gd" id="1_cfab3"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/dollop_attack.gd" id="1_cfab3"]
 [ext_resource type="Texture2D" uid="uid://48ikau4nkbge" path="res://Art/Assets/drop.png" id="2_ueknm"]
 
 [node name="dollopAttack" type="CharacterBody2D"]

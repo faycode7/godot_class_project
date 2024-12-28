@@ -68,7 +68,7 @@ func has_popped():
 		squish_up()
 
 func spawn_droplet(turn):
-	var droplet = load("res://Bullet Hell Implimentation/enemies/droplet.tscn").instantiate()
+	var droplet = load("res://Bullet Hell Implimentation/attack_patterns/droplet.tscn").instantiate()
 	droplet.rot_degrees = turn
 	droplet.global_position = position
 	add_sibling(droplet)

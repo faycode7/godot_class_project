@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpg0l0nwsjqpc"]
+[gd_scene load_steps=5 format=3 uid="uid://bpg0l0nwsjqpc"]
 
 [ext_resource type="PackedScene" uid="uid://c4q4s11rqubnj" path="res://player/fox_girl.tscn" id="1_a5n7j"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lfe5g"]
 [ext_resource type="PackedScene" uid="uid://oqelad7b111f" path="res://Rooms/ad_room.tscn" id="2_roi3b"]
+[ext_resource type="PackedScene" uid="uid://cuasr3t5piccs" path="res://npcs/enemy.tscn" id="4_pq0qw"]
 
 [node name="main_scene" type="Node2D" groups=["main"]]
 script = ExtResource("1_lfe5g")
@@ -20,3 +21,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Area2D" parent="." instance=ExtResource("4_pq0qw")]
+position = Vector2(245, 77)
+enemy_script = "res://enemy_variables/test_enemy.tscn"

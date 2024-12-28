@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8td683vtuhd5"]
 
 [ext_resource type="Texture2D" uid="uid://mky65eaefb5k" path="res://Art/Assets/cake_top.png" id="1_88m32"]
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/cake_slice.gd" id="1_aqqhq"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/cake_slice.gd" id="1_aqqhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uggwv"]
 resource_local_to_scene = true

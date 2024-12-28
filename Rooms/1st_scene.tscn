@@ -1,10 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1hkk746p3asr"]
+[gd_scene load_steps=6 format=3 uid="uid://b1hkk746p3asr"]
 
-[ext_resource type="Texture2D" uid="uid://ds4cyw3vlbo44" path="res://Art/Backgrounds/house_ex.png" id="1_ypqej"]
-[ext_resource type="Texture2D" uid="uid://bfk2tc364frhv" path="res://Art/Assets/paper.png" id="3_ke6dc"]
-[ext_resource type="Texture2D" uid="uid://dg70pbt62gb1q" path="res://Art/Assets/notebook.png" id="3_lsoag"]
 [ext_resource type="PackedScene" uid="uid://cuasr3t5piccs" path="res://npcs/enemy.tscn" id="6_vftxi"]
-[ext_resource type="Texture2D" uid="uid://uy1of3n2nhqd" path="res://Art/Assets/corpse.png" id="7_3qevw"]
 
 [sub_resource type="GDScript" id="GDScript_shmko"]
 
@@ -29,7 +25,6 @@ collision_mask = 2
 [node name="Sprite2D" type="Sprite2D" parent="Paper"]
 y_sort_enabled = true
 position = Vector2(270.5, 388)
-texture = ExtResource("3_ke6dc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paper"]
 y_sort_enabled = true
@@ -43,7 +38,6 @@ collision_mask = 2
 [node name="Sprite2D" type="Sprite2D" parent="Book"]
 y_sort_enabled = true
 position = Vector2(295, 356)
-texture = ExtResource("3_lsoag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
 y_sort_enabled = true
@@ -57,7 +51,6 @@ collision_mask = 2
 [node name="Sprite2D" type="Sprite2D" parent="Corpse"]
 y_sort_enabled = true
 position = Vector2(-184, 265.5)
-texture = ExtResource("7_3qevw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Corpse"]
 y_sort_enabled = true
@@ -76,7 +69,6 @@ shape = SubResource("RectangleShape2D_wonxj")
 [node name="Sprite2D" type="Sprite2D" parent="House2"]
 y_sort_enabled = true
 position = Vector2(183, 296)
-texture = ExtResource("1_ypqej")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="House2"]
 position = Vector2(156, 290)
@@ -86,7 +78,6 @@ position = Vector2(19, 43)
 shape = SubResource("RectangleShape2D_cc1iw")
 
 [node name="enemy" parent="." instance=ExtResource("6_vftxi")]
-collision_layer = 2
 collision_mask = 2
 enemy_script = "res://enemy_variables/test_enemy.tscn"
 enemy_sprite = "res://Art/Assets/corpse.png"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4s72ofj8boxu"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/big_spoon_spawner.gd" id="1_chk7f"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/big_spoon_spawner.gd" id="1_chk7f"]
 
 [node name="big_spoon_spawner" type="Node2D"]
 script = ExtResource("1_chk7f")

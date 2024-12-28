@@ -4,15 +4,16 @@ extends Node2D
 @onready var enemy = $enemy_state_machine
 @onready var player = $Player_fox
 @onready var box: Node2D = $box
+var dead = false
 var death_scene = "res://Bullet Hell Implimentation/scenes/game_over_screen.tscn"
 var list_of_levels = ["res://Bullet Hell Implimentation/enemies/dollop_spawner.tscn"]
-
-
+ 
 
 func _ready():
 	start_fight()
 
 func start_fight():
+	dead = false
 	update_hp()
 	player_turn()
 	healthbar.max_value = Glob.max_health
@@ -25,8 +26,11 @@ func update_hp():
 	health_nums.text = str(Glob.player_health) + "/" + str(Glob.max_health)
 
 func spawn_death():
-	var death = load(death_scene).instantiate()
-	add_child(death)
+	if not dead:
+		dead = true
+		var death = load(death_scene).instantiate()
+		add_child(death)
+		$fight_menu.toggle_menu(false)
 	
 #func start_fight():
 	#if (enemy.get_child_count()>0):
@@ -46,14 +50,15 @@ func player_turn():
 	$Player_fox.set_physics_process(false)
 	$Player_fox.position = Vector2(0,91)
 	$Player_fox.invincibility = true
-	
+	$enemy_state_machine.pulverize_children()
+	$box/AnimationPlayer.play("RESET")
 	
 func next_turn():
 	$fight_menu.toggle_menu(false)
 	$enemy_state_machine.attack()
 	$Player_fox.set_physics_process(true)
 	$Player_fox.invincibility = false
-	
+
 	
 func end_fight():
 	get_tree().paused = false

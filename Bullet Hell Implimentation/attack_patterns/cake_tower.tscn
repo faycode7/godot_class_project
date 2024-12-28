@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5emlum5ret1s"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/cake_tower.gd" id="1_j36wu"]
-[ext_resource type="PackedScene" uid="uid://8td683vtuhd5" path="res://Bullet Hell Implimentation/enemies/cake_slice.tscn" id="1_mktfu"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/cake_tower.gd" id="1_j36wu"]
+[ext_resource type="PackedScene" uid="uid://8td683vtuhd5" path="res://Bullet Hell Implimentation/attack_patterns/cake_slice.tscn" id="1_mktfu"]
 
 [node name="cake_tower" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)

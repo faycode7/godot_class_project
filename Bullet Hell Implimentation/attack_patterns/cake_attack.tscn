@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3guk0unsa2sn"]
 
-[ext_resource type="Script" path="res://Bullet Hell Implimentation/enemies/cake_attack.gd" id="1_nq31t"]
+[ext_resource type="Script" path="res://Bullet Hell Implimentation/attack_patterns/cake_attack.gd" id="1_nq31t"]
 
 [node name="cake_attack" type="Node2D"]
 position = Vector2(400, -27)

@@ -14,12 +14,12 @@ func set_direction():
 		direction = 1
 
 func spawn_cake_towers():
-	var cake = load("res://Bullet Hell Implimentation/enemies/cake_tower.tscn").instantiate()
+	var cake = load("res://Bullet Hell Implimentation/attack_patterns/cake_tower.tscn").instantiate()
 	cake.direction = direction
+	if direction == -1 : cake.global_position = Vector2(400,position.y)
+	else: cake.global_position = Vector2(-400,position.y)
 	cake.speed = speed
 	add_child(cake)
-	cake.global_position=Vector2(-400 * direction,position.y)
-
 
 func _on_timer_timeout() -> void:
 	if counter > 5:
