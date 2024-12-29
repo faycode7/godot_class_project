@@ -17,6 +17,8 @@ func _unhandled_input(event):
 	animation_director()
 	if Input.is_action_just_pressed("input") and interactables and Glob.player_movement:
 		interactables[0].selected()
+	if Input.is_action_just_pressed("inventory"):
+		get_tree().call_group("main","open_inventory")
 func _physics_process(_delta):
 	if Glob.player_movement:
 		apply_movement_velocity()

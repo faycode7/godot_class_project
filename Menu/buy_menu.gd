@@ -29,14 +29,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_selected:
 			if (Glob.current_money < price):
 				$Control/RichTextLabel.text = ("[center]Not enough money[/center]")
-				self.close()
 			else:
-				get_parent().is_bought()
-				Glob.current_money -= price
-				$Control/RichTextLabel.text = "[center]You just bought " + item + "[/center]"
-				print (Glob.inventory)
-				print (Glob.current_money)
-				self.close()
-		else:
-			self.close()
+				if Glob.inventory.size() < Glob.max_items:
+					get_parent().is_bought()
+					Glob.current_money -= price
+					$Control/RichTextLabel.text = "[center]You just bought " + item + "[/center]"
+					print (Glob.inventory)
+					print (Glob.current_money)
+				else:
+					$Control/RichTextLabel.text = "Your pockets are full"
+		self.close()
 		

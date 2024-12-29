@@ -23,4 +23,8 @@ func set_player_pos(pos):
 		Glob.custom_position = Vector2(0,0)
 	else:
 		$fox_girl.global_position = pos
+		
+func open_inventory():
+	var spawned = load("res://Menu/inventory.tscn").instantiate()
+	add_child(spawned)
 	

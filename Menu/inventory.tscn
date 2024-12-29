@@ -9,13 +9,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -322.0
-offset_right = 579.0
-offset_bottom = 333.0
+offset_left = -122.0
+offset_top = -106.0
+offset_right = 1033.0
+offset_bottom = 549.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_kx1gh")
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -32,15 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 401.0
-offset_top = 168.0
-offset_right = 744.0
-offset_bottom = 191.0
-bbcode_enabled = true
-scroll_active = false
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 400.0
@@ -50,3 +43,74 @@ offset_bottom = 493.0
 bbcode_enabled = true
 text = "cheese"
 scroll_active = false
+
+[node name="inventory_list" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 401.0
+offset_top = 170.0
+offset_right = 745.0
+offset_bottom = 429.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="inventory_list"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 172.0
+offset_right = 744.0
+offset_bottom = 219.0
+text = "hp 5/10
+gold 12"

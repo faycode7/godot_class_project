@@ -5,6 +5,7 @@ extends Area2D
 func _ready() -> void:
 	print (Glob.inventory)
 	$Sprite2D.texture = load("res://Art/Assets/" + item + ".png")
+	
 func is_bought():
 	Glob.inventory.append(item)
 
