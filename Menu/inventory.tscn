@@ -4,20 +4,14 @@
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -106.0
-offset_right = 1033.0
-offset_bottom = 549.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+anchor_right = 0.329
+anchor_bottom = 0.445
+offset_left = -231.0
+offset_top = -154.0
+offset_right = -610.008
+offset_bottom = -442.36
+scale = Vector2(1.395, 1.5)
 script = ExtResource("1_kx1gh")
-metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -26,16 +20,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -178.5
-offset_top = -160.5
-offset_right = 170.5
-offset_bottom = 166.5
+offset_left = 396.0
+offset_top = 148.0
+offset_right = 750.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 397.5
+offset_top = 151.5
+offset_right = 746.5
+offset_bottom = 478.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 396.0
+offset_top = 418.0
+offset_right = 750.0
+offset_bottom = 422.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-layout_mode = 0
 offset_left = 400.0
 offset_top = 430.0
 offset_right = 749.0
@@ -46,7 +67,6 @@ scroll_active = false
 
 [node name="inventory_list" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
 offset_left = 401.0
 offset_top = 170.0
 offset_right = 745.0
@@ -107,10 +127,49 @@ fit_content = true
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
 offset_left = 655.0
-offset_top = 172.0
+offset_top = 156.0
 offset_right = 744.0
-offset_bottom = 219.0
+offset_bottom = 203.0
 text = "hp 5/10
 gold 12"
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 396.0
+offset_top = 106.0
+offset_right = 751.0
+offset_bottom = 389.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.133548)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 397.0
+offset_top = 109.0
+offset_right = 748.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.133548)
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 423.656
+offset_top = 112.667
+offset_right = 747.656
+offset_bottom = 135.667
+text = "(i) close inventory, (space) use item
+"

@@ -62,10 +62,9 @@ func next_turn():
 	
 func end_fight():
 	get_tree().paused = false
-	print("You win")
-	print ("You get", str(randi_range(0,10)) ,"coins")
-	print ("You get", str(randi_range(0,20)) ,"expirience")
+	win()
 	get_tree().call_group("main","end_fight")
+	await get_tree().create_timer(0.5).timeout
 	self.queue_free()
 	
 func close():
@@ -77,3 +76,10 @@ func setbox_small():
 	
 func setbox_normal():
 	$box/AnimationPlayer.play("set_box_normal")
+	
+func win():
+	var coin = randi_range(0,10)
+	$ColorRect.show()
+	$ColorRect/RichTextLabel.text = "You won.\nYou got " + str(coin)  + "coin(s)"
+	Glob.current_money += coin
+	

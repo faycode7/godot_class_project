@@ -26,5 +26,9 @@ func set_player_pos(pos):
 		
 func open_inventory():
 	var spawned = load("res://Menu/inventory.tscn").instantiate()
-	add_child(spawned)
+	$GUI.add_child(spawned)
+	player.set_physics_process(false)
+	player.velocity = Vector2(0,0)
+	await get_tree().create_timer(0.1).timeout
+	player.set_physics_process(true)
 	

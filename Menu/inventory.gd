@@ -56,9 +56,9 @@ func consume(item):
 		selected = Glob.inventory.size() - 1
 	inventory_list.get_child(Glob.inventory.size()).text = ""
 	if item == "bread":
-		Glob.player_health += 3
+		Glob.update_hp(3)
 	if item == "cheese":
-		Glob.player_health += 5
+		Glob.update_hp(5)
 	if item == "axe":
 		Glob.player_damage = 20
 	
@@ -66,10 +66,13 @@ func consume(item):
 	
 	await get_tree().create_timer(0.05).timeout
 	can_input = true
+	get_tree().call_group("bullet_hell_controller","update_hp")
+	
 
 func update_stats():
 	$RichTextLabel.text = "HP: " + str(Glob.player_health) + "/" + str(Glob.max_health)  + "\n" + "Gold: " + str(Glob.current_money)
 
 func close_inventory():
 	self.queue_free()
+
 	

@@ -37,8 +37,8 @@ func attack():
 	add_child (game)
 	
 func item():
-	pass
-	
+	set_process_input(false)
+	get_tree().call_group("main", "open_inventory")
 func flee():
 	
 	get_parent().close()
