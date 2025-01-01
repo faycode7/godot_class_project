@@ -7,6 +7,8 @@ var enemy_variables
 @onready var attacks = $attacks
 @onready var enemy_animation = $AnimationPlayer
 
+func _ready() -> void:
+	pass
 func pulverize_children():
 	if (attacks.get_child_count()): 
 		for i in attacks.get_child_count() :
@@ -25,7 +27,8 @@ func health_setter(enemy_health):
 func attack():
 	attack_counter = randi_range(0,enemy_variables.attack_list.size()-1)
 	var attack_init = load(enemy_variables.attack_list[attack_counter]).instantiate()
-	attack_init.global_position = get_parent().global_position
+	attack_init.global_position = position
+	attack_init.scale = Vector2(1.5,1.5)
 	attacks.add_child(attack_init)
 
 func enemy_start():

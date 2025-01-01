@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://oqelad7b111f"]
+[gd_scene load_steps=7 format=4 uid="uid://oqelad7b111f"]
 
 [ext_resource type="Script" path="res://Rooms/room_script.gd" id="1_c1oaq"]
 [ext_resource type="PackedScene" uid="uid://ctp35k2fh04i5" path="res://tile_map.tscn" id="1_f7yh3"]
 [ext_resource type="PackedScene" uid="uid://bfnaeqiocksvp" path="res://doors/door.tscn" id="3_oedif"]
 [ext_resource type="PackedScene" uid="uid://ih6ejgaxxxl2" path="res://interactables/shop_item.tscn" id="4_h8akh"]
+[ext_resource type="PackedScene" uid="uid://cuasr3t5piccs" path="res://npcs/enemy.tscn" id="5_dafbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgvgx"]
 size = Vector2(40, 20)
@@ -33,3 +34,15 @@ shape = SubResource("RectangleShape2D_xgvgx")
 position = Vector2(245, 47)
 item = "cheese"
 price = 1
+
+[node name="Enemy" parent="." instance=ExtResource("5_dafbl")]
+position = Vector2(197, 76)
+enemy_script = "res://enemy_variables/shrimp_dude.tscn"
+
+[node name="Enemy2" parent="." instance=ExtResource("5_dafbl")]
+position = Vector2(68, 88)
+enemy_script = "res://enemy_variables/wako_guy.tscn"
+
+[node name="Enemy3" parent="." instance=ExtResource("5_dafbl")]
+position = Vector2(107, 123)
+enemy_script = "res://enemy_variables/cake_witch.tscn"

@@ -8,5 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 func selected():
 	pass
 func _ready():
-	$Sprite2D.texture = load(enemy_sprite)
+	if enemy_sprite != "":
+		$Sprite2D.texture = load(enemy_sprite)
 	

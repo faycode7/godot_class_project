@@ -2,8 +2,9 @@ extends Node2D
 @onready var player = $fox_girl #onready for nodes ONLY!!!!!
 func spawn_fight():
 	var spawned = load("res://Bullet Hell Implimentation/scenes/bullet_hell_imp.tscn").instantiate()
-	$Control.call_deferred("add_child",spawned)
-	player.camera.zoom = Vector2(2,2)
+	spawned.scale = Vector2(2,2)
+	spawned.global_position = Vector2(550,200)
+	$GUI.call_deferred("add_child",spawned)
 	player.set_process_unhandled_input(false)
 	player.set_physics_process(false)
 

@@ -61,11 +61,12 @@ func next_turn():
 
 	
 func end_fight():
+	player_turn()
+	player.visible = false
 	get_tree().paused = false
 	win()
+	await get_tree().create_timer(1).timeout
 	get_tree().call_group("main","end_fight")
-	await get_tree().create_timer(0.5).timeout
-	self.queue_free()
 	
 func close():
 	get_tree().call_group("main","end_fight")
@@ -82,4 +83,5 @@ func win():
 	$ColorRect.show()
 	$ColorRect/RichTextLabel.text = "You won.\nYou got " + str(coin)  + "coin(s)"
 	Glob.current_money += coin
+	
 	

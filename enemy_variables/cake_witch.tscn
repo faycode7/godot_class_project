@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdg7nkg3v7a76"]
+
+[ext_resource type="Script" path="res://enemy_variables/cake_witch.gd" id="1_l56k6"]
+
+[node name="cake_witch" type="Node"]
+script = ExtResource("1_l56k6")
